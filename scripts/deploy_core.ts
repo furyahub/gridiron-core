@@ -10,32 +10,38 @@ import {
 import { join } from 'path';
 
 // Define the type for the 'furya' object
+interface Furya {
+    config: FuryaConfig;
+    lcdClient: LCDClient; // Add LCDClient property
+    // Add other necessary properties/methods for LCDClient if applicable
+}
+
 interface FuryaConfig {
-    chainID: string;
-    network: string;
-    lcd: string;
-    gasPrices: { [key: string]: number };
-    gasAdjustment: number;
-    feeDenom: string;
+    chainID: 'furya-1';
+    network: 'furya';
+    lcd: 'https://api.furya.xyz';
+    gasAdjustment: 1.5;
+    feeDenom: 'ufury';
     bech32Prefix: {
-        accAddr: string;
-        accPub: string;
-        valAddr: string;
-        valPub: string;
-        consensusAddr: string;
-        consensusPub: string;
+        accAddr: 'furya';
+        accPub: 'furyapub';
+        valAddr: 'furyaval';
+        valPub: 'furyavalpub';
+        consensusAddr: 'furyavalcons';
+        consensusPub: 'furyavalconspub';
+    };
+    stakingDenom: 'ufury';
+    coinType: 118;
+    gasPrices: {
+        ufury: 0.0095;
+        // Add other gas prices as needed
     };
     // Add other necessary fields
 }
 
-interface Furya {
-    config: FuryaConfig;
-    // Add other necessary properties/methods for LCDClient if applicable
-}
-
 interface Wallet {
     key: {
-        accAddress: string;
+        accAddress: 'furya1jfddgljahqda6hu58827p6w8csr33d6q4vxf0g';
     };
     // Add other necessary properties/methods for Wallet if applicable
 }
