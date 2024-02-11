@@ -187,7 +187,7 @@ dependencies = [
  "astroport-governance",
  "gridiron-mocks",
  "gridiron-native-coin-registry",
- "gridiron-nft",
+ "astroport-nft",
  "gridiron-pair 1.5.0",
  "gridiron-pair-stable",
  "gridiron-staking",
@@ -369,7 +369,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "gridiron-nft"
+name = "astroport-nft"
 version = "1.0.0"
 source = "git+https://github.com/astroport-fi/astroport-governance#f0ef7c6dde76fc77ce360262923366a5cde3c3f8"
 dependencies = [

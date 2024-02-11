@@ -45,7 +45,7 @@ gridiron-whitelist = { path = "../../whitelist" }
 anyhow = "1"
 voting-escrow = { git = "https://github.com/astroport-fi/astroport-governance" }
 voting-escrow-delegation = { git = "https://github.com/astroport-fi/astroport-governance" }
-gridiron-nft = { git = "https://github.com/astroport-fi/astroport-governance" }
+astroport-nft = { git = "https://github.com/astroport-fi/astroport-governance" }
 cw721-base = { version = "0.15", features = ["library"] }
 generator-proxy-to-vkr = { git = "https://github.com/astroport-fi/astro-generator-proxy-contracts", branch = "main" }
 valkyrie = { git = "https://github.com/astroport-fi/valkyrieprotocol", rev = "b5fcb666f17d7e291f40365756e50fc0d7b9bf54" }
