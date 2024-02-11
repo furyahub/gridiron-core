@@ -22,7 +22,7 @@ checksum = "080e9890a082662b09c1ad45f567faeeb47f22b5fb23895fbe1e651e718e25ca"
 [[package]]
 name = "ap-valkyrie"
 version = "1.0.0"
-source = "git+https://github.com/exfury/grid-generator-proxy-contracts?branch=main#e573a8f8542b99015cac910f024a5f20fd793f3c"
+source = "git+https://github.com/astroport-fi/grid-generator-proxy-contracts?branch=main#e573a8f8542b99015cac910f024a5f20fd793f3c"
 dependencies = [
  "cosmwasm-schema",
  "cosmwasm-std",
@@ -31,7 +31,7 @@ dependencies = [
 [[package]]
 name = "grid-satellite-package"
 version = "0.1.0"
-source = "git+https://github.com/exfury/gridiron_ibc#ffb48ebfd7dbbc010cf86c9b02bad236c456fca0"
+source = "git+https://github.com/astroport-fi/gridiron_ibc#ffb48ebfd7dbbc010cf86c9b02bad236c456fca0"
 dependencies = [
  "gridiron-governance",
  "cosmwasm-schema",
@@ -114,7 +114,7 @@ dependencies = [
 [[package]]
 name = "gridiron-escrow-fee-distributor"
 version = "1.0.2"
-source = "git+https://github.com/exfury/gridiron-governance#f0ef7c6dde76fc77ce360262923366a5cde3c3f8"
+source = "git+https://github.com/astroport-fi/gridiron-governance#f0ef7c6dde76fc77ce360262923366a5cde3c3f8"
 dependencies = [
  "gridiron-governance",
  "cosmwasm-schema",
@@ -170,7 +170,7 @@ dependencies = [
  "cosmos-sdk-proto",
  "cosmwasm-schema",
  "cosmwasm-std",
- "cw-multi-test 0.16.5 (git+https://github.com/exfury/cw-multi-test.git?rev=269a2c829d1ad25d67caa4600f72d2a21fb8fdeb)",
+ "cw-multi-test 0.16.5 (git+https://github.com/astroport-fi/cw-multi-test.git?rev=269a2c829d1ad25d67caa4600f72d2a21fb8fdeb)",
  "cw-storage-plus 0.15.1",
  "cw-utils 1.0.3",
  "cw2 1.1.2",
@@ -229,7 +229,7 @@ dependencies = [
 [[package]]
 name = "gridiron-governance"
 version = "1.2.0"
-source = "git+https://github.com/exfury/gridiron-governance#f0ef7c6dde76fc77ce360262923366a5cde3c3f8"
+source = "git+https://github.com/astroport-fi/gridiron-governance#f0ef7c6dde76fc77ce360262923366a5cde3c3f8"
 dependencies = [
  "gridiron 3.11.1",
  "cosmwasm-schema",
@@ -251,7 +251,7 @@ dependencies = [
  "gridiron-vesting",
  "cosmwasm-schema",
  "cosmwasm-std",
- "cw-multi-test 0.16.5 (git+https://github.com/exfury/cw-multi-test?branch=gridiron_cozy_fork)",
+ "cw-multi-test 0.16.5 (git+https://github.com/astroport-fi/cw-multi-test?branch=gridiron_cozy_fork)",
  "cw-storage-plus 0.15.1",
  "cw-utils 1.0.3",
  "cw2 1.1.2",
@@ -277,7 +277,7 @@ dependencies = [
  "gridiron-whitelist",
  "cosmwasm-schema",
  "cosmwasm-std",
- "cw-multi-test 0.16.5 (git+https://github.com/exfury/cw-multi-test.git?rev=269a2c829d1ad25d67caa4600f72d2a21fb8fdeb)",
+ "cw-multi-test 0.16.5 (git+https://github.com/astroport-fi/cw-multi-test.git?rev=269a2c829d1ad25d67caa4600f72d2a21fb8fdeb)",
  "cw-storage-plus 1.2.0",
  "cw20 0.15.1",
  "cw20-base 0.15.1",
@@ -329,7 +329,7 @@ dependencies = [
  "gridiron-xgrid-token",
  "cosmwasm-schema",
  "cosmwasm-std",
- "cw-multi-test 0.16.5 (git+https://github.com/exfury/cw-multi-test.git?rev=269a2c829d1ad25d67caa4600f72d2a21fb8fdeb)",
+ "cw-multi-test 0.16.5 (git+https://github.com/astroport-fi/cw-multi-test.git?rev=269a2c829d1ad25d67caa4600f72d2a21fb8fdeb)",
  "cw-utils 1.0.3",
  "cw20 0.15.1",
  "cw3",
@@ -371,7 +371,7 @@ dependencies = [
 [[package]]
 name = "gridiron-nft"
 version = "1.0.0"
-source = "git+https://github.com/exfury/gridiron-governance#f0ef7c6dde76fc77ce360262923366a5cde3c3f8"
+source = "git+https://github.com/astroport-fi/gridiron-governance#f0ef7c6dde76fc77ce360262923366a5cde3c3f8"
 dependencies = [
  "gridiron-governance",
  "cosmwasm-schema",
@@ -1086,7 +1086,7 @@ dependencies = [
 [[package]]
 name = "cw-multi-test"
 version = "0.16.5"
-source = "git+https://github.com/exfury/cw-multi-test?branch=gridiron_cozy_fork#08a11aa26f9f35b41f707e803d4cdec38fd2e78d"
+source = "git+https://github.com/astroport-fi/cw-multi-test?branch=gridiron_cozy_fork#08a11aa26f9f35b41f707e803d4cdec38fd2e78d"
 dependencies = [
  "anyhow",
  "cosmwasm-std",
@@ -1104,7 +1104,7 @@ dependencies = [
 [[package]]
 name = "cw-multi-test"
 version = "0.16.5"
-source = "git+https://github.com/exfury/cw-multi-test.git?rev=269a2c829d1ad25d67caa4600f72d2a21fb8fdeb#269a2c829d1ad25d67caa4600f72d2a21fb8fdeb"
+source = "git+https://github.com/astroport-fi/cw-multi-test.git?rev=269a2c829d1ad25d67caa4600f72d2a21fb8fdeb#269a2c829d1ad25d67caa4600f72d2a21fb8fdeb"
 dependencies = [
  "anyhow",
  "cosmwasm-std",
@@ -1700,7 +1700,7 @@ checksum = "a06f77d526c1a601b7c4cdd98f54b5eaabffc14d5f2f0296febdc7f357c6d3ba"
 [[package]]
 name = "generator-controller"
 version = "1.3.0"
-source = "git+https://github.com/exfury/gridiron-governance#f0ef7c6dde76fc77ce360262923366a5cde3c3f8"
+source = "git+https://github.com/astroport-fi/gridiron-governance#f0ef7c6dde76fc77ce360262923366a5cde3c3f8"
 dependencies = [
  "gridiron-governance",
  "cosmwasm-schema",
@@ -1715,7 +1715,7 @@ dependencies = [
 [[package]]
 name = "generator-proxy-to-vkr"
 version = "0.0.0"
-source = "git+https://github.com/exfury/grid-generator-proxy-contracts?branch=main#e573a8f8542b99015cac910f024a5f20fd793f3c"
+source = "git+https://github.com/astroport-fi/grid-generator-proxy-contracts?branch=main#e573a8f8542b99015cac910f024a5f20fd793f3c"
 dependencies = [
  "ap-valkyrie",
  "gridiron 3.11.1",
@@ -2683,7 +2683,7 @@ dependencies = [
 [[package]]
 name = "sim"
 version = "0.1.0"
-source = "git+https://github.com/exfury/gridiron-sims?branch=main#744b25583373e964a9f9a1c51949a67bd68e6a17"
+source = "git+https://github.com/astroport-fi/gridiron-sims?branch=main#744b25583373e964a9f9a1c51949a67bd68e6a17"
 dependencies = [
  "pyo3",
 ]
@@ -2962,7 +2962,7 @@ checksum = "e1766d682d402817b5ac4490b3c3002d91dfa0d22812f341609f97b08757359c"
 [[package]]
 name = "valkyrie"
 version = "1.0.8-beta.1"
-source = "git+https://github.com/exfury/valkyrieprotocol?rev=b5fcb666f17d7e291f40365756e50fc0d7b9bf54#b5fcb666f17d7e291f40365756e50fc0d7b9bf54"
+source = "git+https://github.com/astroport-fi/valkyrieprotocol?rev=b5fcb666f17d7e291f40365756e50fc0d7b9bf54#b5fcb666f17d7e291f40365756e50fc0d7b9bf54"
 dependencies = [
  "bigint",
  "cosmwasm-std",
@@ -2977,7 +2977,7 @@ dependencies = [
 [[package]]
 name = "valkyrie-lp-staking"
 version = "1.0.8-beta.1"
-source = "git+https://github.com/exfury/valkyrieprotocol?rev=b5fcb666f17d7e291f40365756e50fc0d7b9bf54#b5fcb666f17d7e291f40365756e50fc0d7b9bf54"
+source = "git+https://github.com/astroport-fi/valkyrieprotocol?rev=b5fcb666f17d7e291f40365756e50fc0d7b9bf54#b5fcb666f17d7e291f40365756e50fc0d7b9bf54"
 dependencies = [
  "cosmwasm-std",
  "cw-storage-plus 0.11.1",
@@ -2990,7 +2990,7 @@ dependencies = [
 [[package]]
 name = "valkyrie-vp"
 version = "1.0.8-beta.1"
-source = "git+https://github.com/exfury/valkyrieprotocol?rev=b5fcb666f17d7e291f40365756e50fc0d7b9bf54#b5fcb666f17d7e291f40365756e50fc0d7b9bf54"
+source = "git+https://github.com/astroport-fi/valkyrieprotocol?rev=b5fcb666f17d7e291f40365756e50fc0d7b9bf54#b5fcb666f17d7e291f40365756e50fc0d7b9bf54"
 dependencies = [
  "cosmwasm-std",
  "cw-storage-plus 0.11.1",
@@ -3011,7 +3011,7 @@ checksum = "49874b5167b65d7193b8aba1567f5c7d93d001cafc34600cee003eda787e483f"
 [[package]]
 name = "voting-escrow"
 version = "1.3.0"
-source = "git+https://github.com/exfury/gridiron-governance#f0ef7c6dde76fc77ce360262923366a5cde3c3f8"
+source = "git+https://github.com/astroport-fi/gridiron-governance#f0ef7c6dde76fc77ce360262923366a5cde3c3f8"
 dependencies = [
  "gridiron-governance",
  "cosmwasm-schema",
@@ -3026,7 +3026,7 @@ dependencies = [
 [[package]]
 name = "voting-escrow-delegation"
 version = "1.0.0"
-source = "git+https://github.com/exfury/gridiron-governance#f0ef7c6dde76fc77ce360262923366a5cde3c3f8"
+source = "git+https://github.com/astroport-fi/gridiron-governance#f0ef7c6dde76fc77ce360262923366a5cde3c3f8"
 dependencies = [
  "gridiron-governance",
  "cosmwasm-schema",

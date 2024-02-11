@@ -5,7 +5,7 @@ authors = ["Gridiron"]
 edition = "2021"
 description = "Gridiron Incentives Contract distributing rewards to LP stakers"
 license = "GPL-3.0-only"
-repository = "https://github.com/exfury/gridiron"
+repository = "https://github.com/astroport-fi/gridiron"
 homepage = "https://gridiron.fi"
 
 [lib]
@@ -26,7 +26,7 @@ thiserror = "1"
 itertools = "0.11"
 
 [dev-dependencies]
-cw-multi-test = { git = "https://github.com/exfury/cw-multi-test", branch = "gridiron_cozy_fork" }
+cw-multi-test = { git = "https://github.com/astroport-fi/cw-multi-test", branch = "gridiron_cozy_fork" }
 anyhow = "1"
 gridiron-factory = { path = "../../factory" }
 gridiron-pair = { path = "../../pair" }

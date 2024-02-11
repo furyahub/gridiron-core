@@ -2,7 +2,7 @@
 name = "gridiron-native-coin-wrapper"
 version = "0.1.0"
 authors = ["Gridiron"]
-repository = "https://github.com/exfury/gridiron"
+repository = "https://github.com/astroport-fi/gridiron"
 homepage = "https://gridiron.fi"
 edition = "2021"
 

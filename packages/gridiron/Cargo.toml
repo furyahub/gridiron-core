@@ -5,7 +5,7 @@ authors = ["Gridiron"]
 edition = "2021"
 description = "Common Gridiron types, queriers and other utils"
 license = "Apache-2.0"
-repository = "https://github.com/exfury/gridiron"
+repository = "https://github.com/astroport-fi/gridiron"
 homepage = "https://gridiron.fi"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
