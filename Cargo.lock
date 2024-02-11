@@ -31,7 +31,7 @@ dependencies = [
 [[package]]
 name = "grid-satellite-package"
 version = "0.1.0"
-source = "git+https://github.com/astroport-fi/gridiron_ibc#ffb48ebfd7dbbc010cf86c9b02bad236c456fca0"
+source = "git+https://github.com/astroport-fi/astroport_ibc#ffb48ebfd7dbbc010cf86c9b02bad236c456fca0"
 dependencies = [
  "gridiron-governance",
  "cosmwasm-schema",
@@ -114,7 +114,7 @@ dependencies = [
 [[package]]
 name = "gridiron-escrow-fee-distributor"
 version = "1.0.2"
-source = "git+https://github.com/astroport-fi/gridiron-governance#f0ef7c6dde76fc77ce360262923366a5cde3c3f8"
+source = "git+https://github.com/astroport-fi/astroport-governance#f0ef7c6dde76fc77ce360262923366a5cde3c3f8"
 dependencies = [
  "gridiron-governance",
  "cosmwasm-schema",
@@ -229,7 +229,7 @@ dependencies = [
 [[package]]
 name = "gridiron-governance"
 version = "1.2.0"
-source = "git+https://github.com/astroport-fi/gridiron-governance#f0ef7c6dde76fc77ce360262923366a5cde3c3f8"
+source = "git+https://github.com/astroport-fi/astroport-governance#f0ef7c6dde76fc77ce360262923366a5cde3c3f8"
 dependencies = [
  "gridiron 3.11.1",
  "cosmwasm-schema",
@@ -371,7 +371,7 @@ dependencies = [
 [[package]]
 name = "gridiron-nft"
 version = "1.0.0"
-source = "git+https://github.com/astroport-fi/gridiron-governance#f0ef7c6dde76fc77ce360262923366a5cde3c3f8"
+source = "git+https://github.com/astroport-fi/astroport-governance#f0ef7c6dde76fc77ce360262923366a5cde3c3f8"
 dependencies = [
  "gridiron-governance",
  "cosmwasm-schema",
@@ -1700,7 +1700,7 @@ checksum = "a06f77d526c1a601b7c4cdd98f54b5eaabffc14d5f2f0296febdc7f357c6d3ba"
 [[package]]
 name = "generator-controller"
 version = "1.3.0"
-source = "git+https://github.com/astroport-fi/gridiron-governance#f0ef7c6dde76fc77ce360262923366a5cde3c3f8"
+source = "git+https://github.com/astroport-fi/astroport-governance#f0ef7c6dde76fc77ce360262923366a5cde3c3f8"
 dependencies = [
  "gridiron-governance",
  "cosmwasm-schema",
@@ -2683,7 +2683,7 @@ dependencies = [
 [[package]]
 name = "sim"
 version = "0.1.0"
-source = "git+https://github.com/astroport-fi/gridiron-sims?branch=main#744b25583373e964a9f9a1c51949a67bd68e6a17"
+source = "git+https://github.com/astroport-fi/astroport-sims?branch=main#744b25583373e964a9f9a1c51949a67bd68e6a17"
 dependencies = [
  "pyo3",
 ]
@@ -3011,7 +3011,7 @@ checksum = "49874b5167b65d7193b8aba1567f5c7d93d001cafc34600cee003eda787e483f"
 [[package]]
 name = "voting-escrow"
 version = "1.3.0"
-source = "git+https://github.com/astroport-fi/gridiron-governance#f0ef7c6dde76fc77ce360262923366a5cde3c3f8"
+source = "git+https://github.com/astroport-fi/astroport-governance#f0ef7c6dde76fc77ce360262923366a5cde3c3f8"
 dependencies = [
  "gridiron-governance",
  "cosmwasm-schema",
@@ -3026,7 +3026,7 @@ dependencies = [
 [[package]]
 name = "voting-escrow-delegation"
 version = "1.0.0"
-source = "git+https://github.com/astroport-fi/gridiron-governance#f0ef7c6dde76fc77ce360262923366a5cde3c3f8"
+source = "git+https://github.com/astroport-fi/astroport-governance#f0ef7c6dde76fc77ce360262923366a5cde3c3f8"
 dependencies = [
  "gridiron-governance",
  "cosmwasm-schema",

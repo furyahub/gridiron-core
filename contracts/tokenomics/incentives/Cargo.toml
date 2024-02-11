@@ -5,7 +5,7 @@ authors = ["Gridiron"]
 edition = "2021"
 description = "Gridiron Incentives Contract distributing rewards to LP stakers"
 license = "GPL-3.0-only"
-repository = "https://github.com/astroport-fi/gridiron"
+repository = "https://github.com/astroport-fi/astroport"
 homepage = "https://gridiron.fi"
 
 [lib]
