@@ -11,7 +11,8 @@ import {
     MsgInstantiateContract,
     MsgMigrateContract,
     MsgStoreCode,
-    MsgUpdateContractAdmin, Tx,
+    MsgUpdateContractAdmin,
+    Tx,
     Wallet
 } from '@terra-money/terra.js';
 import {
@@ -51,20 +52,20 @@ export function readArtifact(name: string = 'artifact', from: string = ARTIFACTS
 
 export interface Client {
     wallet: Wallet
-    terra: LCDClient | LocalTerra
+    furya: LCDClient | LocalTerra
 }
 
 export function newClient(): Client {
     const client = <Client>{}
     if (process.env.WALLET) {
-        client.terra = new LCDClient({
+        client.furya = new LCDClient({
             URL: String(process.env.LCD_CLIENT_URL),
             chainID: String(process.env.CHAIN_ID)
         })
-        client.wallet = recover(client.terra, process.env.WALLET)
+        client.wallet = recover(client.furya, process.env.WALLET)
     } else {
-        client.terra = new LocalTerra()
-        client.wallet = (client.terra as LocalTerra).wallets.test1
+        client.furya = new LocalTerra()
+        client.wallet = (client.furya as LocalTerra).wallets.test1
     }
     return client
 }
@@ -73,9 +74,6 @@ export function writeArtifact(data: object, name: string = 'artifact', to: strin
     writeFileSync(path.join(to, `${name}.json`), JSON.stringify(data, null, 2))
 }
 
-// Tequila lcd is load balanced, so txs can't be sent too fast, otherwise account sequence queries
-// may resolve an older state depending on which lcd you end up with. Generally 1000 ms is enough
-// for all nodes to sync up.
 let TIMEOUT = 1000
 
 export function setTimeoutDuration(t: number) {
@@ -104,92 +102,77 @@ export async function createTransaction(wallet: Wallet, msg: Msg) {
     return await wallet.createAndSignTx({ msgs: [msg] })
 }
 
-export async function broadcastTransaction(terra: LCDClient, signedTx: Tx) {
-    const result = await terra.tx.broadcast(signedTx)
+export async function broadcastTransaction(furya: LCDClient, signedTx: Tx) {
+    const result = await furya.tx.broadcast(signedTx)
     await sleep(TIMEOUT)
     return result
 }
 
-export async function performTransaction(terra: LCDClient, wallet: Wallet, msg: Msg) {
+export async function performTransaction(furya: LCDClient, wallet: Wallet, msg: Msg) {
     const signedTx = await createTransaction(wallet, msg)
-    const result = await broadcastTransaction(terra, signedTx)
+    const result = await broadcastTransaction(furya, signedTx)
     if (isTxError(result)) {
         throw new TransactionError(result.code, result.codespace, result.raw_log)
     }
     return result
 }
 
-export async function uploadContract(terra: LCDClient, wallet: Wallet, filepath: string) {
+export async function uploadContract(furya: LCDClient, wallet: Wallet, filepath: string) {
     const contract = readFileSync(filepath, 'base64');
     const uploadMsg = new MsgStoreCode(wallet.key.accAddress, contract);
-    let result = await performTransaction(terra, wallet, uploadMsg);
+    let result = await performTransaction(furya, wallet, uploadMsg);
     return Number(result.logs[0].eventsByType.store_code.code_id[0]) // code_id
 }
 
-export async function instantiateContract(terra: LCDClient, wallet: Wallet, admin_address: string | undefined, codeId: number, msg: object, label: string) {
+export async function instantiateContract(furya: LCDClient, wallet: Wallet, admin_address: string | undefined, codeId: number, msg: object, label: string) {
     const instantiateMsg = new MsgInstantiateContract(wallet.key.accAddress, admin_address, codeId, msg, undefined, label);
-    let result = await performTransaction(terra, wallet, instantiateMsg)
+    let result = await performTransaction(furya, wallet, instantiateMsg)
     return result.logs[0].events.filter(el => el.type == 'instantiate').map(x => x.attributes.filter(element => element.key == '_contract_address').map(x => x.value));
 }
 
-export async function executeContract(terra: LCDClient, wallet: Wallet, contractAddress: string, msg: object, coins?: Coins.Input) {
+export async function executeContract(furya: LCDClient, wallet: Wallet, contractAddress: string, msg: object, coins?: Coins.Input) {
     const executeMsg = new MsgExecuteContract(wallet.key.accAddress, contractAddress, msg, coins);
-    return await performTransaction(terra, wallet, executeMsg);
+    return await performTransaction(furya, wallet, executeMsg);
 }
 
-export async function queryContract(terra: LCDClient, contractAddress: string, query: object): Promise<any> {
-    return await terra.wasm.contractQuery(contractAddress, query)
+export async function queryContract(furya: LCDClient, contractAddress: string, query: object): Promise<any> {
+    return await furya.wasm.contractQuery(contractAddress, query)
 }
 
-export async function queryContractInfo(terra: LCDClient, contractAddress: string): Promise<any> {
-    return await terra.wasm.contractInfo(contractAddress)
+export async function queryContractInfo(furya: LCDClient, contractAddress: string): Promise<any> {
+    return await furya.wasm.contractInfo(contractAddress)
 }
 
-export async function queryCodeInfo(terra: LCDClient, codeID: number): Promise<any> {
-    return await terra.wasm.codeInfo(codeID)
+export async function queryCodeInfo(furya: LCDClient, codeID: number): Promise<any> {
+    return await furya.wasm.codeInfo(codeID)
 }
 
-export async function queryContractRaw(terra: LCDClient, end_point: string, params?: APIParams): Promise<any> {
-    return await terra.apiRequester.getRaw(end_point, params)
+export async function queryContractRaw(furya: LCDClient, end_point: string, params?: APIParams): Promise<any> {
+    return await furya.apiRequester.getRaw(end_point, params)
 }
 
-export async function deployContract(terra: LCDClient, wallet: Wallet, admin_address: string, filepath: string, initMsg: object, label: string) {
-    const codeId = await uploadContract(terra, wallet, filepath);
-    return await instantiateContract(terra, wallet, admin_address, codeId, initMsg, label);
+export async function deployContract(furya: LCDClient, wallet: Wallet, admin_address: string, filepath: string, initMsg: object, label: string) {
+    const codeId = await uploadContract(furya, wallet, filepath);
+    return await instantiateContract(furya, wallet, admin_address, codeId, initMsg, label);
 }
 
-export async function migrate(terra: LCDClient, wallet: Wallet, contractAddress: string, newCodeId: number, msg: object) {
+export async function migrate(furya: LCDClient, wallet: Wallet, contractAddress: string, newCodeId: number, msg: object) {
     const migrateMsg = new MsgMigrateContract(wallet.key.accAddress, contractAddress, newCodeId, msg);
-    return await performTransaction(terra, wallet, migrateMsg);
+    return await performTransaction(furya, wallet, migrateMsg);
 }
 
-export function recover(terra: LCDClient, mnemonic: string) {
+export function recover(furya: LCDClient, mnemonic: string) {
     const mk = new MnemonicKey({ mnemonic: mnemonic });
-    return terra.wallet(mk);
+    return furya.wallet(mk);
 }
 
-export async function update_contract_admin(
-    terra: LCDClient,
-    wallet: Wallet,
-    contract_address: string,
-    admin_address: string
-) {
-    let msg = new MsgUpdateContractAdmin(
-        wallet.key.accAddress,
-        admin_address,
-        contract_address
-    );
-
-    return await performTransaction(terra, wallet, msg);
-}
-
-export function initialize(terra: LCDClient) {
+export function initialize(furya: LCDClient) {
     const mk = new MnemonicKey();
 
     console.log(`Account Address: ${mk.accAddress}`);
     console.log(`MnemonicKey: ${mk.mnemonic}`);
 
-    return terra.wallet(mk);
+    return furya.wallet(mk);
 }
 
 export function toEncodedBinary(object: any) {
@@ -289,7 +272,7 @@ export class NativeSwap {
     }
 }
 
-export class GridSwap {
+export class AstroSwap {
     offer_asset_info: TokenAsset | NativeAsset;
     ask_asset_info: TokenAsset | NativeAsset;
 
@@ -300,7 +283,7 @@ export class GridSwap {
 
     getInfo() {
         return {
-            "grid_swap": {
+            "astro_swap": {
                 "offer_asset_info": this.offer_asset_info.getInfo(),
                 "ask_asset_info": this.ask_asset_info.getInfo(),
             }
@@ -314,22 +297,4 @@ export function checkParams(network: any, required_params: any) {
             throw "Set required param: " + required_params[k]
         }
     }
-}
-
-export async function getLPTokenName(terra: LCDClient | LocalTerra, pool: any) {
-    let minter = await queryContract(terra, pool[0], { minter: {} }).then(res => res.minter);
-    let assetInfos = await queryContract(terra, minter, { pair: {} }).then(res => res.asset_infos);
-    let lpTokenName: string[] = [];
-
-    for (const asset of assetInfos) {
-        if (asset.hasOwnProperty("token")) {
-            lpTokenName.push(await queryContract(terra, asset.token.contract_addr, { token_info: {} }).then(res => res.symbol));
-        } else if (asset.hasOwnProperty("native_token")) {
-            lpTokenName.push(asset.native_token.denom.substring(0, 8));
-        } else {
-            throw "Incompatible type of Asset!"
-        }
-    }
-
-    return lpTokenName.join("-").substring(0, 17);
 }
