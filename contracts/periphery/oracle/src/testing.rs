@@ -30,7 +30,7 @@ fn oracle_overflow() {
 
     let mut env = mock_env();
     let factory = Addr::unchecked("factory");
-    let grid_token_contract = Addr::unchecked("grid-token");
+    let grid_token_contract = Addr::unchecked("astro-token");
     let usdc_token_contract = Addr::unchecked("usdc-token");
 
     deps.querier.with_token_balances(&[

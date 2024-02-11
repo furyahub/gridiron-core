@@ -32,5 +32,5 @@ cw-utils = "1.0.1"
 
 [dev-dependencies]
 gridiron-token = { path = "../../token" }
-gridiron-xgrid-token = { path = "../../tokenomics/xgrid_token" }
+gridiron-xastro-token = { path = "../../tokenomics/xgrid_token" }
 cw-multi-test = "0.15"

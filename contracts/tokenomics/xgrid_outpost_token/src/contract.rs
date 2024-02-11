@@ -27,7 +27,7 @@ use cw20_base::ContractError;
 use cw_storage_plus::Bound;
 
 /// Contract name that is used for migration.
-const CONTRACT_NAME: &str = "gridiron-xgrid-outpost-token";
+const CONTRACT_NAME: &str = "gridiron-xastro-outpost-token";
 /// Contract version that is used for migration.
 const CONTRACT_VERSION: &str = env!("CARGO_PKG_VERSION");
 

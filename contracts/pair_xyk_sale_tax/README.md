@@ -1,6 +1,6 @@
 # Gridiron Constant Product Pair with Sale Tax
 
-The constant product pool uses the widely known xy=k formula. More details around how the pool functions can be found [here](https://docs.gridiron.fi/gridiron/gridiron/grid-pools/constant-product-pools).
+The constant product pool uses the widely known xy=k formula. More details around how the pool functions can be found [here](https://docs.gridiron.fi/gridiron/gridiron/astro-pools/constant-product-pools).
 
 This is a modified version of the standard Gridiron XYK pair which adds a configurable sale tax. The tax can be added on each of the assets in the pair and is taken on the offered asset before calculating the return amount.
 

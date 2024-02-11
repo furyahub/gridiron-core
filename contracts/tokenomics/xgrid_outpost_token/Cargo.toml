@@ -1,5 +1,5 @@
 [package]
-name = "gridiron-xgrid-outpost-token"
+name = "gridiron-xastro-outpost-token"
 version = "1.0.0"
 authors = ["Gridiron"]
 edition = "2021"

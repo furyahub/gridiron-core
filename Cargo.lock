@@ -29,7 +29,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "grid-satellite-package"
+name = "astro-satellite-package"
 version = "0.1.0"
 source = "git+https://github.com/astroport-fi/astroport_ibc#ffb48ebfd7dbbc010cf86c9b02bad236c456fca0"
 dependencies = [
@@ -291,7 +291,7 @@ dependencies = [
 name = "gridiron-maker"
 version = "1.4.0"
 dependencies = [
- "grid-satellite-package",
+ "astro-satellite-package",
  "gridiron 3.11.1",
  "gridiron-escrow-fee-distributor",
  "gridiron-factory 1.7.0",
@@ -326,7 +326,7 @@ dependencies = [
  "gridiron-token",
  "gridiron-vesting",
  "gridiron-whitelist",
- "gridiron-xgrid-token",
+ "gridiron-xastro-token",
  "cosmwasm-schema",
  "cosmwasm-std",
  "cw-multi-test 0.16.5 (git+https://github.com/astroport-fi/cw-multi-test.git?rev=269a2c829d1ad25d67caa4600f72d2a21fb8fdeb)",
@@ -442,7 +442,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "gridiron-pair-grid-xgrid"
+name = "gridiron-pair-astro-xgrid"
 version = "1.0.3"
 dependencies = [
  "gridiron 3.11.1",
@@ -450,7 +450,7 @@ dependencies = [
  "gridiron-pair-bonded",
  "gridiron-staking",
  "gridiron-token",
- "gridiron-xgrid-token",
+ "gridiron-xastro-token",
  "cosmwasm-schema",
  "cosmwasm-std",
  "cw-multi-test 0.15.1",
@@ -658,7 +658,7 @@ version = "1.1.0"
 dependencies = [
  "gridiron 3.11.1",
  "gridiron-token",
- "gridiron-xgrid-token",
+ "gridiron-xastro-token",
  "cosmwasm-schema",
  "cosmwasm-std",
  "cw-multi-test 0.15.1",
@@ -712,7 +712,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "gridiron-xgrid-outpost-token"
+name = "gridiron-xastro-outpost-token"
 version = "1.0.0"
 dependencies = [
  "gridiron 3.11.1",
@@ -727,7 +727,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "gridiron-xgrid-token"
+name = "gridiron-xastro-token"
 version = "1.1.0"
 dependencies = [
  "gridiron 3.11.1",

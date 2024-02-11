@@ -31,7 +31,7 @@ impl<'a> Contract<'a> {
 
 /// Implementation of the bonded pair template. Performs GRID-xGRID swap operations.
 impl<'a> PairBonded<'a> for Contract<'a> {
-    const CONTRACT_NAME: &'a str = "gridiron-pair-grid-xgrid";
+    const CONTRACT_NAME: &'a str = "gridiron-pair-astro-xgrid";
 
     fn swap(
         &self,

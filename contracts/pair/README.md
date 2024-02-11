@@ -1,6 +1,6 @@
 # Gridiron Constant Product Pair
 
-The constant product pool uses the widely known xy=k formula. More details around how the pool functions can be found [here](https://docs.gridiron.fi/gridiron/gridiron/grid-pools/constant-product-pools).
+The constant product pool uses the widely known xy=k formula. More details around how the pool functions can be found [here](https://docs.gridiron.fi/gridiron/gridiron/astro-pools/constant-product-pools).
 
 ---
 

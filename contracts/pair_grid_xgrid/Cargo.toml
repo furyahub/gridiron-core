@@ -1,5 +1,5 @@
 [package]
-name = "gridiron-pair-grid-xgrid"
+name = "gridiron-pair-astro-xgrid"
 version = "1.0.3"
 authors = ["Gridiron"]
 edition = "2021"
@@ -38,4 +38,4 @@ gridiron-token = { path = "../token" }
 gridiron-factory = { path = "../factory" }
 cw-multi-test = "0.15"
 gridiron-staking = { path = "../tokenomics/staking" }
-gridiron-xgrid-token = { path = "../tokenomics/xgrid_token" }
+gridiron-xastro-token = { path = "../tokenomics/xgrid_token" }

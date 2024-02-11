@@ -1,6 +1,6 @@
 # Gridiron Base Stableswap Pair
 
-The stableswap pool uses the 4A(Rx+Ry) + D formula, resulting in a constant price ∆x / ∆y = 1. More details around how the pool functions can be found [here](https://docs.gridiron.fi/gridiron/gridiron/grid-pools/stableswap-invariant-pools).
+The stableswap pool uses the 4A(Rx+Ry) + D formula, resulting in a constant price ∆x / ∆y = 1. More details around how the pool functions can be found [here](https://docs.gridiron.fi/gridiron/gridiron/astro-pools/stableswap-invariant-pools).
 
 ---
 

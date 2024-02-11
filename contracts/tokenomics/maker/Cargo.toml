@@ -28,7 +28,7 @@ cw-storage-plus = "0.15"
 gridiron = { path = "../../../packages/gridiron", version = "3.10" }
 thiserror = { version = "1.0" }
 cosmwasm-schema = "1.1"
-grid-satellite-package = { git = "https://github.com/astroport-fi/astroport_ibc", version = "0.1" }
+astro-satellite-package = { git = "https://github.com/astroport-fi/astroport_ibc", version = "0.1" }
 
 [dev-dependencies]
 gridiron-token = { path = "../../token" }

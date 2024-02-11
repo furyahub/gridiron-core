@@ -1610,7 +1610,7 @@ fn test_wrong_assets_order() {
             new_code_id,
         )
         .unwrap_err();
-    assert_eq!(err.root_cause().to_string(), "Generic error: Pair asset infos have different order than market: inj-grid while market has grid-inj");
+    assert_eq!(err.root_cause().to_string(), "Generic error: Pair asset infos have different order than market: inj-grid while market has astro-inj");
 
     let mut app = mock_inj_app(|_, _, _| {});
     let market_id = app
@@ -1629,7 +1629,7 @@ fn test_wrong_assets_order() {
         Some(market_id),
     )
     .unwrap_err();
-    assert_eq!(err.root_cause().to_string(), "Generic error: Pair asset infos have different order than market: inj-grid while market has grid-inj");
+    assert_eq!(err.root_cause().to_string(), "Generic error: Pair asset infos have different order than market: inj-grid while market has astro-inj");
 }
 
 #[test]

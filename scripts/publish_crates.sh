@@ -9,12 +9,12 @@ declare FIRST_CRATES
 declare SKIP_CRATES
 declare DRY_FLAGS
 
-# NOTE: astroport-governance and grid-satellite-package should be published first
+# NOTE: astroport-governance and astro-satellite-package should be published first
 
 if [ -z "${1:-}" ]; then
   echo "Usage: $0 <workspace root dir> [optional: --publish]"
   echo "If flag --publish is not set, only dry-run will be performed."
-  echo "NOTE: astroport-governance and grid-satellite-package should be published first."
+  echo "NOTE: astroport-governance and astro-satellite-package should be published first."
   exit 1
 fi
 
@@ -66,7 +66,7 @@ publish() {
 ROOT_DIR="$(realpath "$1")"
 
 FIRST_CRATES="gridiron-circular-buffer gridiron gridiron-factory"
-SKIP_CRATES="gridiron-pair-grid-xgrid"
+SKIP_CRATES="gridiron-pair-astro-xgrid"
 
 for contract in $FIRST_CRATES; do
   publish "$contract"

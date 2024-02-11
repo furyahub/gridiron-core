@@ -18,7 +18,7 @@ fn proper_initialization() {
     let staking = Addr::unchecked("staking");
     let governance_contract = Addr::unchecked("governance");
     let governance_percent = Uint64::new(50);
-    let grid_token_contract = Addr::unchecked("grid-token");
+    let grid_token_contract = Addr::unchecked("astro-token");
 
     let instantiate_msg = InstantiateMsg {
         owner: owner.to_string(),
@@ -68,7 +68,7 @@ fn update_owner() {
     let staking = Addr::unchecked("staking");
     let governance_contract = Addr::unchecked("governance");
     let governance_percent = Uint64::new(50);
-    let grid_token_contract = Addr::unchecked("grid-token");
+    let grid_token_contract = Addr::unchecked("astro-token");
 
     let msg = InstantiateMsg {
         owner: owner.to_string(),
