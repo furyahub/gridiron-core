@@ -66,7 +66,7 @@ The optimized contracts are generated in the artifacts/ directory.
 
 ## Deployment
 
-You can find versions and commits for actually deployed contracts [here](https://github.com/gridiron-fi/gridiron-changelog).
+You can find versions and commits for actually deployed contracts [here](https://github.com/exfury/gridiron-changelog).
 
 ## Docs
 

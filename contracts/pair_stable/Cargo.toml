@@ -38,7 +38,7 @@ gridiron-circular-buffer = { path = "../../packages/circular_buffer", version = 
 [dev-dependencies]
 anyhow = "1.0"
 proptest = "1.0.0"
-sim = { git = "https://github.com/gridiron-fi/gridiron-sims", branch = "main", package = "sim" }
+sim = { git = "https://github.com/exfury/gridiron-sims", branch = "main", package = "sim" }
 gridiron-token = { path = "../token" }
 gridiron-factory = { path = "../factory" }
 derivative = "2.2"

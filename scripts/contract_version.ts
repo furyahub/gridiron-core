@@ -9,9 +9,9 @@ import fs from "fs";
 import path from "path";
 
 const GRIDIRON_CHANGE_LOG_NAME = process.env.GRIDIRON_CHANGE_LOG_NAME! || String('core_phoenix')
-const GRIDIRON_CHANGE_LOG_URL = process.env.GRIDIRON_CHANGE_LOG_URL! || String("https://raw.githubusercontent.com/gridiron-fi/gridiron-changelog/main/terra-2/phoenix-1/core_phoenix.json")
+const GRIDIRON_CHANGE_LOG_URL = process.env.GRIDIRON_CHANGE_LOG_URL! || String("https://raw.githubusercontent.com/exfury/gridiron-changelog/main/terra-2/phoenix-1/core_phoenix.json")
 const GRIDIRON_3RD_PARTY_LOG_NAME = process.env.GRIDIRON_CHANGE_LOG_NAME! || String('3rd_party_phoenix')
-const GRIDIRON_3RD_PARTY_LOG_URL = process.env.GRIDIRON_CHANGE_LOG_URL! || String("https://raw.githubusercontent.com/gridiron-fi/gridiron-changelog/main/terra-2/phoenix-1/core_phoenix.json")
+const GRIDIRON_3RD_PARTY_LOG_URL = process.env.GRIDIRON_CHANGE_LOG_URL! || String("https://raw.githubusercontent.com/exfury/gridiron-changelog/main/terra-2/phoenix-1/core_phoenix.json")
 
 interface CInfo {
     address: string,
