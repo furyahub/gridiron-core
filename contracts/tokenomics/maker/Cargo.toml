@@ -36,6 +36,6 @@ gridiron-factory = { path = "../../factory" }
 gridiron-pair = { path = "../../pair" }
 cw-multi-test = "0.15"
 gridiron-pair-stable = { path = "../../pair_stable" }
-gridiron-governance = { git = "https://github.com/astroport-fi/astroport-governance" }
+astroport-governance = { git = "https://github.com/astroport-fi/astroport-governance" }
 gridiron-escrow-fee-distributor = { git = "https://github.com/astroport-fi/astroport-governance" }
 gridiron-native-coin-registry = { path = "../../periphery/native_coin_registry" }

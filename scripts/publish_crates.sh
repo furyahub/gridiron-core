@@ -9,12 +9,12 @@ declare FIRST_CRATES
 declare SKIP_CRATES
 declare DRY_FLAGS
 
-# NOTE: gridiron-governance and grid-satellite-package should be published first
+# NOTE: astroport-governance and grid-satellite-package should be published first
 
 if [ -z "${1:-}" ]; then
   echo "Usage: $0 <workspace root dir> [optional: --publish]"
   echo "If flag --publish is not set, only dry-run will be performed."
-  echo "NOTE: gridiron-governance and grid-satellite-package should be published first."
+  echo "NOTE: astroport-governance and grid-satellite-package should be published first."
   exit 1
 fi
 
