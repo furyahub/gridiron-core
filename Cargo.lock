@@ -251,7 +251,7 @@ dependencies = [
  "gridiron-vesting",
  "cosmwasm-schema",
  "cosmwasm-std",
- "cw-multi-test 0.16.5 (git+https://github.com/astroport-fi/cw-multi-test?branch=gridiron_cozy_fork)",
+ "cw-multi-test 0.16.5 (git+https://github.com/astroport-fi/cw-multi-test?branch=astroport_cozy_fork)",
  "cw-storage-plus 0.15.1",
  "cw-utils 1.0.3",
  "cw2 1.1.2",
@@ -1086,7 +1086,7 @@ dependencies = [
 [[package]]
 name = "cw-multi-test"
 version = "0.16.5"
-source = "git+https://github.com/astroport-fi/cw-multi-test?branch=gridiron_cozy_fork#08a11aa26f9f35b41f707e803d4cdec38fd2e78d"
+source = "git+https://github.com/astroport-fi/cw-multi-test?branch=astroport_cozy_fork#08a11aa26f9f35b41f707e803d4cdec38fd2e78d"
 dependencies = [
  "anyhow",
  "cosmwasm-std",
