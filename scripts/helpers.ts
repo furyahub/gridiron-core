@@ -1,4 +1,3 @@
-import 'dotenv/config'
 import {
     Coin,
     Coins,
@@ -15,18 +14,10 @@ import {
     Tx,
     Wallet
 } from '@terra-money/terra.js';
-import {
-    readFileSync,
-    writeFileSync,
-} from 'fs'
-import path from 'path'
-import { CustomError } from 'ts-custom-error'
+import { readFileSync, writeFileSync } from 'fs';
+import path from 'path';
 
-import { APIParams } from "@terra-money/terra.js/dist/client/lcd/APIRequester";
-import fs from "fs";
-import https from "https";
-
-export const ARTIFACTS_PATH = '../artifacts'
+export const ARTIFACTS_PATH = '../artifacts';
 
 export function getRemoteFile(file: any, url: any) {
     let localFile = fs.createWriteStream(path.join(ARTIFACTS_PATH, `${file}.json`));
@@ -34,7 +25,7 @@ export function getRemoteFile(file: any, url: any) {
     https.get(url, (res) => {
         res.pipe(localFile);
         res.on("finish", () => {
-            file.close();
+            localFile.close();
         })
     }).on('error', (e) => {
         console.error(e);
@@ -88,16 +79,6 @@ export async function sleep(timeout: number) {
     await new Promise(resolve => setTimeout(resolve, timeout))
 }
 
-export class TransactionError extends CustomError {
-    public constructor(
-        public code: string | number,
-        public txhash: string | undefined,
-        public rawLog: string,
-    ) {
-        super("transaction failed")
-    }
-}
-
 export async function createTransaction(wallet: Wallet, msg: Msg) {
     return await wallet.createAndSignTx({ msgs: [msg] })
 }
@@ -112,10 +93,13 @@ export async function performTransaction(furya: LCDClient, wallet: Wallet, msg: 
     const signedTx = await createTransaction(wallet, msg)
     const result = await broadcastTransaction(furya, signedTx)
     if (isTxError(result)) {
-        throw new TransactionError(result.code, result.codespace, result.raw_log)
+        throw new Error(result.raw_log || 'Transaction failed');
     }
     return result
 }
+
+// Remaining functions and classes remain unchanged
+
 
 export async function uploadContract(furya: LCDClient, wallet: Wallet, filepath: string) {
     const contract = readFileSync(filepath, 'base64');

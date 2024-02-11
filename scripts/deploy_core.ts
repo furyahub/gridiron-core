@@ -4,40 +4,42 @@ import {
     writeArtifact,
     readArtifact,
     deployContract,
-    executeContract,
     uploadContract,
-    instantiateContract,
-    queryContract,
-    toEncodedBinary,
+    executeContract,
 } from './helpers.js';
 import { join } from 'path';
-import { chainConfigs } from "./types.d/chain_configs.js";
 
-const ARTIFACTS_PATH = '../artifacts';
-const furya = {
-    config: {
-        chainID: "furya-chain",
-        network: "furya-network",
-        lcd: "https://furya-lcd-url.com",
-        gasPrices: {
-            uusd: 0.15,
-            uluna: 0.15
-            // Add other gas prices as needed
-        },
-        gasAdjustment: 1.5,
-        feeDenom: "uusd",
-        bech32Prefix: {
-            accAddr: "furya",
-            accPub: "furyapub",
-            valAddr: "furyavaloper",
-            valPub: "furyavaloperpub",
-            consensusAddr: "furyavalcons",
-            consensusPub: "furyavalconspub"
-        },
-        // Add other necessary fields
-    },
+// Define the type for the 'furya' object
+interface FuryaConfig {
+    chainID: string;
+    network: string;
+    lcd: string;
+    gasPrices: { [key: string]: number };
+    gasAdjustment: number;
+    feeDenom: string;
+    bech32Prefix: {
+        accAddr: string;
+        accPub: string;
+        valAddr: string;
+        valPub: string;
+        consensusAddr: string;
+        consensusPub: string;
+    };
+    // Add other necessary fields
+}
+
+interface Furya {
+    config: FuryaConfig;
     // Add other necessary properties/methods for LCDClient if applicable
-};
+}
+
+interface Wallet {
+    key: {
+        accAddress: string;
+    };
+    // Add other necessary properties/methods for Wallet if applicable
+}
+
 async function main() {
     const { furya, wallet } = newClient();
     console.log(`Initialized client for chainID: ${furya.config.chainID}`);
@@ -59,13 +61,13 @@ async function main() {
     }
 }
 
-async function uploadAndInitToken(furya, wallet) {
+async function uploadAndInitToken(furya: Furya, wallet: Wallet) {
     let network = readArtifact(furya.config.chainID);
 
     // Upload Token Contract
     if (!network.tokenCodeID) {
         console.log('Uploading Token Contract...');
-        network.tokenCodeID = await uploadContract(furya, wallet, join(ARTIFACTS_PATH, 'token_contract.wasm'));
+        network.tokenCodeID = await uploadContract(furya, wallet, join(ARTIFACTS_PATH, 'astroport_core.wasm'));
         console.log(`Token contract uploaded with codeId: ${network.tokenCodeID}`);
         writeArtifact(network, furya.config.chainID);
     }
@@ -85,7 +87,7 @@ async function uploadAndInitToken(furya, wallet) {
     }
 }
 
-async function uploadPairContracts(furya, wallet) {
+async function uploadPairContracts(furya: Furya, wallet: Wallet) {
     let network = readArtifact(furya.config.chainID);
 
     // Upload Pair Contracts
@@ -97,7 +99,7 @@ async function uploadPairContracts(furya, wallet) {
     }
 }
 
-async function uploadAndInitStaking(furya, wallet) {
+async function uploadAndInitStaking(furya: Furya, wallet: Wallet) {
     let network = readArtifact(furya.config.chainID);
 
     // Upload Staking Contract
@@ -121,7 +123,7 @@ async function uploadAndInitStaking(furya, wallet) {
     }
 }
 
-async function uploadAndInitFactory(furya, wallet) {
+async function uploadAndInitFactory(furya: Furya, wallet: Wallet) {
     let network = readArtifact(furya.config.chainID);
 
     // Upload Factory Contract
@@ -145,7 +147,7 @@ async function uploadAndInitFactory(furya, wallet) {
     }
 }
 
-async function uploadAndInitRouter(furya, wallet) {
+async function uploadAndInitRouter(furya: Furya, wallet: Wallet) {
     let network = readArtifact(furya.config.chainID);
 
     // Upload Router Contract
@@ -169,7 +171,7 @@ async function uploadAndInitRouter(furya, wallet) {
     }
 }
 
-async function uploadAndInitMaker(furya, wallet) {
+async function uploadAndInitMaker(furya: Furya, wallet: Wallet) {
     let network = readArtifact(furya.config.chainID);
 
     // Upload Maker Contract
@@ -193,7 +195,7 @@ async function uploadAndInitMaker(furya, wallet) {
     }
 }
 
-async function uploadAndInitTreasury(furya, wallet) {
+async function uploadAndInitTreasury(furya: Furya, wallet: Wallet) {
     let network = readArtifact(furya.config.chainID);
 
     // Upload Treasury Contract
@@ -217,7 +219,7 @@ async function uploadAndInitTreasury(furya, wallet) {
     }
 }
 
-async function uploadAndInitVesting(furya, wallet) {
+async function uploadAndInitVesting(furya: Furya, wallet: Wallet) {
     let network = readArtifact(furya.config.chainID);
 
     // Upload Vesting Contract
@@ -241,7 +243,7 @@ async function uploadAndInitVesting(furya, wallet) {
     }
 }
 
-async function uploadAndInitGenerator(furya, wallet) {
+async function uploadAndInitGenerator(furya: Furya, wallet: Wallet) {
     let network = readArtifact(furya.config.chainID);
 
     // Upload Generator Contract
@@ -265,7 +267,7 @@ async function uploadAndInitGenerator(furya, wallet) {
     }
 }
 
-async function setupVestingAccounts(furya, wallet) {
+async function setupVestingAccounts(furya: Furya, wallet: Wallet) {
     let network = readArtifact(furya.config.chainID);
 
     // Setup Vesting Accounts
@@ -281,4 +283,4 @@ async function setupVestingAccounts(furya, wallet) {
     }
 }
 
-main(); // Call main function to start the deployment process
+main(); // Call the main function to start the deployment process
